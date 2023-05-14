@@ -37,7 +37,7 @@
 -For java packages search in MVNRepository website
 -For smart service, we can define our own custom functions.If we create any class we need to define function in .xml file.See [here](https://docs.appian.com/suite/help/21.4/Custom_Function_Plug-ins.html).To describe it in properties file, Use ```function.<name>.param.query.description```
 
-![Sample HelloWorld](image/readme/sampleCode.png)
+![Sample HelloWorld](image/readme/sampleCode.PNG)
 ![Types of datatypes](image/readme/datatypes1.png)
 ![Types of Datatypes](image/readme/datatypes2.png)
 ![Types of datatypes](image/readme/datatypes3.png)
