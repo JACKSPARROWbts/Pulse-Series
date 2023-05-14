@@ -10,9 +10,9 @@
 - ```schema.xml``` tells documents that solr will index and defines how indexes should be created from source documents,field data(chars,numbers)
 - ```solrconfig.xml``` set config values for individual collections . Define alternate location for data dirctory,manage HTTP communications,cache configs,listen to particular query event and to define event based triggers.
 
-  ![Solr Deployment Architecture.jpg](solrDeployArchi.png "Solr Deployment Architecture")
+  ![Solr Deployment Architecture.jpg](solrDeployArchi.PNG "Solr Deployment Architecture")
 
-![Apache Solr Architecture.jpg](apachesolrarchi.png "Apache Solr Architecture")
+![Apache Solr Architecture.jpg](apachesolrarchi.PNG "Apache Solr Architecture")
 
 ## Solr configuration 
 Reference:
@@ -38,15 +38,15 @@ Reference:
 -  ```java -Dauto -Dbasicauth=username:password -Durl="http://localhost:8983/solr/gettingstarted/update" -jar C:\Users\shankarr\Desktop\solr-8.11.0\example\exampledocs\post.jar C:\Users\shankarr\Desktop\solr-8.11.0\example\exampledocs\TechProducts``` to index the files present in that folder
 - ```curl "https://collabora.vuram.com:8983/solr/techproducts/update?commit=true" -H "Content-Type: text/xml" --data-binary "<delete><query>*:*</query></delete>"``` to delete content,document from core
 - ```curl "http://localhost:8983/solr/gettingstarted/select?wt=json&indent=true&q=*.*"``` to print all contents in collection, instead of q="*" set q=population=1 to get one content from collection.```fl``` is to get particular fields
-![fl field](flFieldUse.png "Fl field's example")
+![fl field](flFieldUse.PNG "Fl field's example")
 - In `q` field if we define in "" it take as one single sentence and search that single in collection,if we define without "" it search by word by word then with sentence.
-![Search Query](searchQuery.png "Search query how it works")
+![Search Query](searchQuery.PNG "Search query how it works")
 
 - Search process by query parser(helps in search strings with index,set importance of particular strings or fields,apply boolean logic between search terms,excluding contents,hightlight)
 -  ```title:"foo bar" AND body:"quick"``` will search both in same time, ```title="foo bar"&body="quick"``` gives those that contains one of these two,```content:*Sparrow* AND foo_txt:"started"``` we can use this to search both in OCR and contents.
-![Filter Query](filterQuery.png "Filter Query example")
+![Filter Query](filterQuery.PNG "Filter Query example")
 - DIH(Data Import Handler)used to import and index content from structured data store,has to be registered in ```solrconfig.xml```. Refer [here](https://vuram.percipio.com/courses/90b33102-5039-11e7-867a-028372024997/videos/90b33107-5039-11e7-867a-028372024997)
-- ```java -Dauto -Durl="http://localhost:8983/solr/gettingstarted/update?wt=json&literal.id=d111&uprefix=attr_&fmap.content=attr_content&commit=true" -jar post.jar testImageSolr2.png``` to index image with tesseract-OCR .
+- ```java -Dauto -Durl="http://localhost:8983/solr/gettingstarted/update?wt=json&literal.id=d111&uprefix=attr_&fmap.content=attr_content&commit=true" -jar post.jar testImageSolr2.PNG``` to index image with tesseract-OCR .
 - ```curl -X POST "http://localhost:8983/solr/gettingstarted/update/extract?literal.id=d112&literal.field1=testImageSolr.jpg&captureAttr=true&defaultfield=content&capture=div&fmap.div=foo_txt&boost.foo_txt=2&" -F "tutorial=@testDocForSolr.docx"``` gives both ocr and docx contents (need to check).[View here](https://stackoverflow.com/questions/9558526/indexing-multiple-documents-and-mapping-to-unique-solr-id)
 ### Facet Based Searching
 Reference:[facets youtube video](https://youtu.be/msDPlY1SeDc)
@@ -54,8 +54,8 @@ Reference:[facets youtube video](https://youtu.be/msDPlY1SeDc)
 - ```curl -X GET "http://localhost:8983/solr/TechProducts/select?q=memory&facet=true&facet.field=menu``` to see facet menu, ```curl -X GET "http://localhost:8983/solr/gettingstarted/select?q=memory&facet=true&facet.field=manu&facet.range=price&f.price.facet.range.start=0&f.price.facet.range.end=500&f.price.facet.range.gap=100"``` to filter in facets
 - ```curl -X GET "http://localhost:8983/solr/gettingstarted/select?q=memory&facet=true&facet.field=price&fq=price:\[100%20TO%20200\]"``` to filter further in the selected facet field.
 - ```http://localhost:8983/solr/gettingstarted/select?facet.field=content&facet.missing=false&facet.query=content%3Drealities&facet=true&indent=true&q.op=OR&q=content%3D%22augmented%22&rows=100``` example to search content in content
-![facet search params](facetSearchParams.png "Facet search params fields")
-![facet search params](facetSearchParams2.png "Facet search params fields")
+![facet search params](facetSearchParams.PNG "Facet search params fields")
+![facet search params](facetSearchParams2.PNG "Facet search params fields")
 
 ### Security:
 - `solr auth enable -type basicAuth -prompt true -zkHost localhost:9983 -blockUnknown true` to enable the basic authentication,`solr auth disable -type basicAuth -prompt true -zkHost localhost:9983 -blockUnknown false` to disable authentication.
@@ -63,11 +63,11 @@ Reference:[facets youtube video](https://youtu.be/msDPlY1SeDc)
 
 ### Solr Data Model
 - Analyzer examines text of fields and generates token. Eg:For textfields ```<analyzer class="org.apache.lcene.analysis.coreWhitespaceAnalyzer"```
-![fieldTypes](fieldtypes.png "Field types of solr")
-![supported field types](supportedFieldTypes.png "supported field types in solr")
-![supported field types](supportedFieldTypes2.png "supported field types in solr").
-![partial Search](solrPartialSearch.png "Solr Partial Search example xml")
-![Query Parameters](queryParams.png "Query Parameters")
+![fieldTypes](fieldtypes.PNG "Field types of solr")
+![supported field types](supportedFieldTypes.PNG "supported field types in solr")
+![supported field types](supportedFieldTypes2.PNG "supported field types in solr").
+![partial Search](solrPartialSearch.PNG "Solr Partial Search example xml")
+![Query Parameters](queryParams.PNG "Query Parameters")
 # How to optimize?
 - The Optimize operation re-organizes all the Segments in a Core (or per shard) and merged them to 1 single Segment (default is 1 segment) To optimise: You could specify MergePolicy in solrconfig.xml, so that Solr will merge segments by himself
 [Some Optimizing ways](https://www.searchstax.com/blog/5-ways-to-optimize-your-solr-search-performance-for-sitecore/)
