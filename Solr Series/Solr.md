@@ -10,7 +10,7 @@
 - ```schema.xml``` tells documents that solr will index and defines how indexes should be created from source documents,field data(chars,numbers)
 - ```solrconfig.xml``` set config values for individual collections . Define alternate location for data dirctory,manage HTTP communications,cache configs,listen to particular query event and to define event based triggers.
 
-  ![Solr Deployment Architecture.jpg](solrDeployArchi.PNG "Solr Deployment Architecture")
+  ![Solr Deployment Architecture.jpg](solrDeployArchi.PNG)
 
 ![Apache Solr Architecture.jpg](apachesolrarchi.PNG "Apache Solr Architecture")
 
