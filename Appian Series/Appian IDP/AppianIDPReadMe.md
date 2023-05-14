@@ -1,0 +1,5 @@
+
+- We can use IDP site for document extraction,we can setup required fields. If the required fields are not present then process will continue without any human intervention.If fields are missing Appian auto-generates a user task to validate the extraction results.If all required fields are present and everything available then Appian will start mapping the key value pair data.
+- ```Configure``` page in IDP Site helps to add new document channel. Only system administrators have access to this tab. We can give access to other users using Designer mode.
+- IDP extract data from pdf tablebox and checkbox.In ```task``` page of IDP user can perform classification task and Reconcile task
+- ```Configure IDP``` - What document we will process,Semi structured document with key value pairs,Who is responsible for reconciling and correcting results,Where to display the data afterward are the top consideration in IDP.Having large text box or large para is not a good fit
