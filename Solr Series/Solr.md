@@ -1,6 +1,6 @@
 # Refrences:
 
-[Google drive notes for solr](https://drive.google.com/drive/folders/1Tic_ad7u2NY1q11RAeDpeYt_oWGtYADa)
+[Google drive notes for solr](https://drive.google.com/drive/folders/1HS5qOLq2hbaNNcxnkMV75gSgE6TovFeL?usp=share_link)
 
 # Solr:
 
@@ -17,7 +17,7 @@
 ## Solr configuration 
 Reference:
 
- [Vuram's percepio video](https://vuram.percipio.com/courses/7daf4ab0-52ce-11e7-ae20-ceb650f9130b/videos/7db08331-52ce-11e7-ae20-ceb650f9130b)
+ [Course Reference](https://vuram.percipio.com/courses/7daf4ab0-52ce-11e7-ae20-ceb650f9130b/videos/7db08331-52ce-11e7-ae20-ceb650f9130b)
 
  [Configuration of tesseract-ocr with solr - youtube video](https://youtu.be/z6s_gfw5Wkg)
 
