@@ -42,6 +42,8 @@ Reference:
 - In `q` field if we define in "" it take as one single sentence and search that single in collection,if we define without "" it search by word by word then with sentence.
 ![Search Query](searchQuery.PNG "Search query how it works")
 - If node is stopped at particular ports, use ```./bin/solr start -c -p <portNumber> -s example/cloud/node2/solr -z localhost:9983``` to start the node.
+- Add or delete replica for particular shards by referring this [documentation](https://solr.apache.org/guide/8_2/replica-management.html#:~:text=be%20processed%20asynchronously.-,DELETEREPLICA%3A%20Delete%20a%20Replica,delete%20the%20instanceDir%20and%20dataDir.)
+- Connect solr to zookeeper by default using the following [steps](https://docs.microfocus.com/doc/UCMDB/2023.05/SASolrCloud) before installing the solr, so it will be easier to stop,start or restart zookeeper.
 - Search process by query parser(helps in search strings with index,set importance of particular strings or fields,apply boolean logic between search terms,excluding contents,hightlight)
 -  ```title:"foo bar" AND body:"quick"``` will search both in same time, ```title="foo bar"&body="quick"``` gives those that contains one of these two,```content:*Sparrow* AND foo_txt:"started"``` we can use this to search both in OCR and contents.
 ![Filter Query](filterQuery.PNG "Filter Query example")
