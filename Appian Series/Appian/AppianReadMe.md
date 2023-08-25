@@ -1,3 +1,25 @@
+# Appian 23.3 Release Features
+
+- Generative AI ```Appian copilot``` , Generate interfaces based on uploaded pdf. Enable it on Admin console > AI Services > Microsoft Azure
+- <a href="AISkill">AI Skills</a> includes email and document classification, document extraction.
+- ```Operations console``` to manage robots easily.
+- ```Robot pools``` assign robots to particular task, group robots by their roles
+- <b>RPA</b><span style="color:orange"> Interact with browser alert</span> to manage browser alerts and <span style="color:orange">Get table values</span> to retrieve table values from html formatted table.Use <span style="color:orange">Open or create workbook</span> to customize spreadhsheet with macros and formatting. <span style="color:orange">Format cells</span> to merge cells,give colors and more.<span style="color:orange">Run Macro</span> to automate microsoft excel tasks using predefined macros stored in excel workbooks,run unsupported functions in excel.
+- Now use single node to update record and related records in ```One to many``` and ```One to one``` relationships only.
+- New functions `a!automationId() , a!automationType()` has been introduced for event history.
+- `a!queryRecordByIdentifier()` function is introduced.
+![Uses](image/AppianReadMe/1692865244009.png)
+- `Postgresql14,Amazon aurora mysql3,Amazon aurora postgresql13` databases introduced.Use this also in Record type.
+- Record type sync has been increase from `2 million` to `4 million`
+- `URL Parameters` in portal is introduced.
+- `Cell coloring` feature in read only grid is introduced.
+- `Patterns` tab to use customized patters in interface.
+- More `Image size` options are introduced
+- `Billboard` now automatically adjust based on the screensize.
+- More `width` options in editable grid and `spacing` options in checkbox are introduced.
+- All manual and programmatic exports occurs asynchronously ie.,export run in background.
+- Before plugins that support to our environment version are returned, now it will return every plugins including unsupported in admin console.
+
 ## DSE
 - If the letter casing for the schema in Oracle is different than the schema attribute of the @Table annotation of the XSD (which is lowercase by default), the entity will not be able to map to the table. If you encounter this issue, you can create a synonym in the Appian user schema that points to the tables in the other schema. Please note that the synonym will need to have the same name as the table or view that it points to.
 - A user must have at least Viewer permissions to a data store in order to use its entities to query, write, or delete data.
@@ -121,3 +143,32 @@
 ![Sprint cycle](image/readme/1661657833186.png)
 ![DoR](image/readme/1661658806315.png)
 ![DoD](image/readme/1661658772094.png)
+
+
+## <div id="AISkill">AI Skill<div>
+
+- Email classification,Document extraction,Document classification are included
+
+- For each classifications, minimum 10 document and for best need 50 documents required.
+![Details on skills](image/AppianReadMe/1692803466423.png)
+
+- Email classification supports only ```.eml``` files.Document classification and extraction supports only ```.pdf``` files.
+
+- Once uploaded the docs and run the model, now it will show metrics
+![Metrics](image/AppianReadMe/1692802313757.png) 
+
+- Confustion matrix told in the above image follows below rule
+![Matrix rule](image/AppianReadMe/1692802405190.png)
+
+-<b>Each field in Metrics uses</b>
+<ul style="list-style-type: square; list-style-position: inside;">
+<li><span style="color:orange">Accuracy</span>,good measure when dataset is fairly balanced, ratio of total correct predictions (both true positives and true negatives) to total predictions, broader metric compared to precision and recall.Ex: A model classified 100 emails as either regular emails or spam emails. Out of the 100 emails, the model accurately labeled 5 spam emails as spam (true positive) and 70 regular emails as non-spam (true negative). The model’s accuracy is 75%. </li>
+<li><span style="color:orange">Confidence score</span>, has value between 0 and 100, average taken from the entire data set, determined per document.Ex: A model is analyzing an email and classifies the email as spam with a confidence score of 0.95. The model is around 95% confident that the classification is correct.</li>
+<li><span style="color:orange">Precision</span>,good measure when higher cost associated with false positive, value between 0 and 1, indicates how many are actually positive out of those predicted positive,more targeted metric compared to accuracy.Ex: The model predicts 10 emails to be spam. Out of those 10 emails, 4 emails really were spam emails  (true positive) while 6 were regular emails (false positive). The model’s precision is 0.4.  TP / (TP + FP)  → 4 / (4 + 6) </li>
+<li><span style="color:orange">Recall</span>,good measure when higher cost associated with false negative,value between 0 and 1, indicates how many were predicted positive out of all of the real positive cases. More targeted metric compared to accuracy. Ex: The model predicts 9 emails to be spam. In reality, 12 emails are spam emails. The model accurately identified 9 spam emails as spam (true positive) and failed to classify 3 spam emails as spam (false negative). The model’s recall is 0.75.  TP / (TP + FN) → 9 / (9 + 3)</li>
+<li><span style="color:orange">F-1 Score</span>,good measure when imbalanced dataset, value between 0 and 1 , harmonic mean (a type of average) of precision and recall. The higher the precision and recall metrics, the higher the F-1 score.</li>
+</ul>
+
+- At metrics,Higher accuracy not always mean model will perform better in production. If train Model A with 50 documents in each document type and get a 75% accuracy rate, then decide to train Model B with only 10 documents per type and get a 100% accuracy rate, Model A is more representative of how  model will actually perform in production because it was trained on a more robust dataset.
+
+- ```Overfitting```  is when a model is trained too specifically on the patterns in the training data set and cannot make accurate predictions for new data. An overfit model will look for specific characteristics or patterns to the exclusion of others. The result is that it could misclassify emails or documents because they do not fit within the model's narrow understanding of the document type.Prevent overfitting by adding more documents to training data set and diversifying data set so that it fully represents the types of documents expect to classify in production.
