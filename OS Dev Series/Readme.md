@@ -4,7 +4,7 @@
 - 4bits or nibble is one hexadecimal digit(0-9 or A-F).Two nibbles or eight bits make up a byte(00-FF in hexadecimal is equal to 0=255),[InstructionMnemonics](https://en.wikipedia.org/wiki/X86_instruction_listings).Initializing 32 bit variable,declare globally in .data EXAMPLE:: var db 32 or (dynamically)var db ?
 - any time to perform operations define in .text, it is readOnly and this is loaded into memory only once reduces usage,launch time ,used to declare const values do not change such as file names,buffer sizes.Declare variables in .bss and print a byte to stdout mov eax, 4 ; the system interprets 4 as "write" mov ebx, 1 ; standard output (print to terminal) mov ecx, variable ; pointer to the value being passed mov edx, 1 ; length of output (in bytes).
 
-![cache1](image/Readme/cache1.png)
+![cache](image/Readme/cache1.PNG)
 
 ![sampleArchi](image/Readme/sampleArchi.png)
 
