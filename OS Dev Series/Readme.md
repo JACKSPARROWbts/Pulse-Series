@@ -9,7 +9,7 @@
 
 - <h3>Disk layout</h3>
 <ul style="list-style-type: square; list-style-position: inside;">
-<li>Floppy,CD,DVD,HDD are in cyliner shape</li>
+<li>Floppy,CD,DVD,HDD are in cylinder shape</li>
 <li>In below each ring says track/cylinder,pizza slice like that is sector</li>
 <li>Floppy disk and HDD store data on both side of platter</li>
 <li> Each side of platter called as head. HDD may have multiple platter so each side of each platter is head</li>
