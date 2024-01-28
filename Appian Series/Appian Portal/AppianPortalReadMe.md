@@ -11,7 +11,7 @@
 - Record types to use in portal must have a service account enabled and added to the group that atleast have initiator permissions
 -  Can't able to use ```record links,record actions, can't able to save filters```.Manage filters button will replace with clear filters button in published portal.
 
-- <b>Compatible</b>
+- Compatible
  <ul style="list-style-type: square; list-style-position: inside;">
 <li>StartProcess</li>
 <li>Read and Write from Public external db</li>

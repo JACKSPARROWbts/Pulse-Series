@@ -33,7 +33,7 @@ Reference:
 - Natively supports indexing structured documents in XML,CSV,JSON formatted files.
 - For POSTing to solr use bin/post on 'nix' systems or ```SimplePostTool``` in windows that is post.jar in example/exampledocs folder using <span style="color:red">java -jar post.jar -h</span>
 - ```java -Dc=coreName -jar post.jar *.xml ``` to index solr with xml,```java -Dtype=application/json -Dc=coreName -jar post.jar *.json``` to index solr with json,```java -Dtype=text/csv -Dc=coreName -jar post.jar *.csv``` to index solr with csv  . If Dtype(DataType) is not specified XML is taken by default 
-- ```solr create -c deleteCollection -n gettingstarted -p 8983``` is one way, ```http://localhost:8983/solr/admin/collections?action=CREATE&name=showcase&numShards=2&replicationFactor=2&maxShardsPerNode=-1&collection.configName=gettingstarted``` is second way, and third way is creating in UI
+- ```solr create -c deleteCollection -n gettingstarted -p 8983``` and the syntax is `bin/solr create [-c name] [-d confdir] [-n configName] [-shards or -s #] [-replicationFactor or -rf #] [-p port]` is one way, ```http://localhost:8983/solr/admin/collections?action=CREATE&name=showcase&numShards=2&replicationFactor=2&maxShardsPerNode=-1&collection.configName=gettingstarted``` is second way, and third way is creating in UI
 - ```solr delete -c deleteCollection -n gettingstarted -p 8983``` is one way to delete, ```http://localhost:8983/solr/admin/collections?action=DELETE&name=deleteCollection&numShards=2&replicationFactor=2&maxShardsPerNode=-1&collection.configName=gettingstarted``` is second way, third way is to change in UI 
 -  ```java -Dauto -Dbasicauth=username:password -Durl="http://localhost:8983/solr/gettingstarted/update" -jar C:\Users\shankarr\Desktop\solr-8.11.0\example\exampledocs\post.jar C:\Users\shankarr\Desktop\solr-8.11.0\example\exampledocs\TechProducts``` to index the files present in that folder
 - ```curl "https://collabora.vuram.com:8983/solr/techproducts/update?commit=true" -H "Content-Type: text/xml" --data-binary "<delete><query>*:*</query></delete>"``` to delete content,document from core
@@ -61,7 +61,7 @@ Reference:[facets youtube video](https://youtu.be/msDPlY1SeDc)
 
 ### Security:
 - `solr auth enable -type basicAuth -prompt true -zkHost localhost:9983 -blockUnknown true` to enable the basic authentication,`solr auth disable -type basicAuth -prompt true -zkHost localhost:9983 -blockUnknown false` to disable authentication.
-- ```solr zk cp file:security.json zk:/security.json -z localhost:9983``` upload security.json file to zookeeper      
+- ```solr zk cp file:security.json zk:/security.json -z localhost:9983``` upload security.json file to zookeeper. To disable the authentication that is enabled by copying json to zookeepr set `basicAuthentication:false` else run ` ./bin/solr auth disable -type basicAuth -prompt true -z 127.0.0.1:9983`      
 
 ### Solr Data Model
 - Analyzer examines text of fields and generates token. Eg:For textfields ```<analyzer class="org.apache.lcene.analysis.coreWhitespaceAnalyzer"```

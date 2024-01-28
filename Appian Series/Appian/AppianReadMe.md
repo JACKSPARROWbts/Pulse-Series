@@ -1,3 +1,17 @@
+# Appian 23.4 Release Features
+
+- Introduced Robot keys in Appian RPA to identify robot and fully managed by customers.
+- Open and work with multiple workbooks simultaneously, Copy data between sheets and workbook, Add sorting and filtering, Search worksheet by cell value, Choose workbooks to close, Refresh data connections and pivot table can be done now in Appian RPA for excel. `Excel: License Required` with new actions introduced.
+- New interface component `RecordChats` introduced with AI CoPilot features to chat based on Records and related records.
+- `Data Fabric Analytics`, new workspace to create views quickly. It has data contaned in multiple apps. Every dataset is made of record type and its one-to-one, many-to-one related record types. Every users should be in `Data Fabric Report Creators` group.
+- Delete records and its related records using `Delete records` smart service by allowing `allow modifying related records`. Configure record actions automatically and rv!reocrd now automatically queries fields referenced in start form.
+- `Auto-commit` field in Execute stored procedure smart service introduced. Rename integrations from object properties menu. Now upload logo files to Custom JDBC Connected systems where logo displayed in record type relationship diagrams and everywhere.
+- `Translation set` new object introduced to create language translations across an application. `Page groups` navigations are introduced in sites available for both web and mobile apps. `Portal monitoring` tab introduced in Monitoring section for indicating latency, traffic and error rate of portals. 
+- In Sites choose `Sidebar` navigation bar option to show site in SideBar. Like in portals `URL Parameters` introduced in Sites and `a!urlForSite()` is introduced for this.
+- choose dropdown labels and values from Record type fields. In a!recordData() function new field `fields` introduced to query specific fields. `Max selections` and `Show selection Count` fields are introduced in Read Only grid to select at maximum and show number of selections at bottom.
+- Now when submit if there is validation in any fields it will automatically scroll to the validated field. Download any chart as `PNG` image. Now valid parameters with list or text types will be shown instead of typing . For eg: we don't need to type "10X" instead it will show when put "" itself.
+
+
 # Appian 23.3 Release Features
 
 - Generative AI ```Appian copilot``` , Generate interfaces based on uploaded pdf. Enable it on Admin console > AI Services > Microsoft Azure
