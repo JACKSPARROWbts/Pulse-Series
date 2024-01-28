@@ -179,3 +179,6 @@ programs run faster when multiple processors are available
 ![BigAndLittleEndian](image/Readme/1650555639054.png)
 - Unicode consortium is maintaining 100000 chars.Unicode that use 32 bit have 4 bytes/char,others have 1 or 2 bytes
 - ASCII code for decimal digit a is ```0x3a```,terminating byte has the hex representation of 0x00.[Bootloader is Not loading the kernel](https://stackoverflow.com/questions/59427901/bootloader-is-not-loading-the-kernel)
+
+
+![1706464137040](image/Readme/1706464137040.png)
