@@ -3,6 +3,10 @@
 - file.c--->(PreProcessor)--->file.i--->(compiler cc1)--->file.s--->(Assembler)--->file.o--->(Linker,printf.o is passed here)--->file.exe
 - 4bits or nibble is one hexadecimal digit(0-9 or A-F).Two nibbles or eight bits make up a byte(00-FF in hexadecimal is equal to 0=255),[InstructionMnemonics](https://en.wikipedia.org/wiki/X86_instruction_listings).Initializing 32 bit variable,declare globally in .data EXAMPLE:: var db 32 or (dynamically)var db ?
 - any time to perform operations define in .text, it is readOnly and this is loaded into memory only once reduces usage,launch time ,used to declare const values do not change such as file names,buffer sizes.Declare variables in .bss and print a byte to stdout mov eax, 4 ; the system interprets 4 as "write" mov ebx, 1 ; standard output (print to terminal) mov ecx, variable ; pointer to the value being passed mov edx, 1 ; length of output (in bytes).
+
+![cache1](image/Readme/cache1.png)
+![sampleArchi](image/Readme/sampleArchi.png)
+
 - <h3>Disk layout</h3>
 <ul style="list-style-type: square; list-style-position: inside;">
 <li>Floppy,CD,DVD,HDD are in cyliner shape</li>
@@ -131,6 +135,7 @@ DI(act as destination for string movement instructions).
 - executes instructions stored in main memory and performs Load(copy byte or word from main memory into register),Store(copy byte from register to main memory),Operate(Copy contents of two registers to ALU and performs Arithmetic operations),Jump(Extract word from instruction and copy to PC)
 - Processor can read data from register 100 times faster than from memory.Processes provides abstractions for processor,mainMemory,I/O Devices.When the operating system decides to transfer control from the current process to some new process, it performs a context switch by saving the context of the current process, restoring the context of the new process and passing control to new process
 - Processors executes faster than 1 I/C called superscalar processors.
+
 ![Processor structure](image/Readme/1645290903416.png)
 
 ## Threading, Parallelism, Concurrency
@@ -148,6 +153,7 @@ programs run faster when multiple processors are available
 
 - First introduced by IBM in 1960.Virtual memory provides abstraction for main memory, I/O devices.Topmost region reserved for kernel. Top most of VirtualMemory contains stack(grows when program executes,decreases when function returns),heap 
 - Machine with w-bit word size, virtual address space range from 0 to 2^w-1 giving program access to 2^w bytes.Eg: 32 bit word has virtual address space to 4GB(4x10^9 bytes),64 bit has 16 exabytes(1.84x10^19 bytes)
+
 ![virtualAddress](image/Readme/1644417972177.png)
 ![Amdahl's law](image/Readme/1645109610211.png)
 
@@ -173,8 +179,4 @@ programs run faster when multiple processors are available
 - Most Intel-compatible machines operate exclusively in little-endian . On the other hand, most machines from IBM and Oracle(arising from acquistion of Sun Microsystems in 2010) uses Big-endian.Android(from Google) and IOS (from Apple)—operate in ARM processors works in little-endian mode
 ![BigAndLittleEndian](image/Readme/1650555639054.png)
 - Unicode consortium is maintaining 100000 chars.Unicode that use 32 bit have 4 bytes/char,others have 1 or 2 bytes
-- ASCII code for decimal digit a is ```0x3a```,terminating byte has the hex representation of 0x00.
-
-
-
-[Bootloader is Not loading the kernel](https://stackoverflow.com/questions/59427901/bootloader-is-not-loading-the-kernel)
+- ASCII code for decimal digit a is ```0x3a```,terminating byte has the hex representation of 0x00.[Bootloader is Not loading the kernel](https://stackoverflow.com/questions/59427901/bootloader-is-not-loading-the-kernel)
