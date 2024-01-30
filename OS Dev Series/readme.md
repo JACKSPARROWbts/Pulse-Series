@@ -3,9 +3,9 @@
 - file.c--->(PreProcessor)--->file.i--->(compiler cc1)--->file.s--->(Assembler)--->file.o--->(Linker,printf.o is passed here)--->file.exe
 - 4bits or nibble is one hexadecimal digit(0-9 or A-F).Two nibbles or eight bits make up a byte(00-FF in hexadecimal is equal to 0=255),[InstructionMnemonics](https://en.wikipedia.org/wiki/X86_instruction_listings).Initializing 32 bit variable,declare globally in .data EXAMPLE:: var db 32 or (dynamically)var db ?
 - any time to perform operations define in .text, it is readOnly and this is loaded into memory only once reduces usage,launch time ,used to declare const values do not change such as file names,buffer sizes.Declare variables in .bss and print a byte to stdout mov eax, 4 ; the system interprets 4 as "write" mov ebx, 1 ; standard output (print to terminal) mov ecx, variable ; pointer to the value being passed mov edx, 1 ; length of output (in bytes).
-![cach](image/Readme/cache1.PNG)
-![cache1](image/Readme/cache1.png)
-![sampleArchi](image/Readme/sampleArchi.png)
+
+![cache](image/Readme/cache1.PNG)
+![Sample Archi](image/Readme/sampleArchi.PNG)
 
 - <h3>Disk layout</h3>
 <ul style="list-style-type: square; list-style-position: inside;">
@@ -17,6 +17,7 @@
 <li>This scheme is useful to determine to physically locate data else not use. To locate data is in begin,middle or end in disk use Logical Block Addressing(LBA) Scheme.</li>
 <li>CHS Scheme - Cylinder and Head starts from index 0, Sector start from index 1.
 
+![1694885204619](image/Readme/1694885204619.png)
 ![1694885204619](image/Readme/1694885204619.png)
 ![1694886037347](image/Readme/1694886037347.png)
 ![1694954454105](image/Readme/1694954454105.png)
