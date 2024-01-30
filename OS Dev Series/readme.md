@@ -8,6 +8,7 @@
 ![sampleArchi](image/Readme/sampleArchi.png)
 
 - <h3>Disk layout</h3>
+
 <ul style="list-style-type: square; list-style-position: inside;">
 <li>Floppy,CD,DVD,HDD are in cylinder shape</li>
 <li>In below each ring says track/cylinder,pizza slice like that is sector</li>
@@ -22,8 +23,9 @@
 ![1694954454105](image/Readme/1694954454105.png)
 ![1694956478980](image/Readme/1694956478980.png)
 
--   Maximum length support
+- Maximum length support
 ![1694712743007](image/Readme/1694712743007.png)
+
  <ul style="list-style-type: square; list-style-position: inside;">
 <li>DB - DefineByte(1 byte) - <b>Integer</b> from -128 to 127 (signed) or 0 to 255 (unsigned)</li>
 <li>DW-DefineWord(2bytes) - <b> Integer</b> from -32,768 to 32,767 (signed) or 0 to 65,535 (unsigned).</li>
@@ -40,7 +42,6 @@
 # LINKER
 
 -Whatever we declared like .text,.data,.bss must be defined here.  The ".=" tells location counter that always initialized to 0x0 .The "*" within curly braces indicate a wildcard,tells compiler to locate exe code(.text) from all input files,merge it all into .text section.But .bss tells compiler to look for all global variables(.bss) to compile into .bss section  
-
 
 # BIOS
 
@@ -86,10 +87,10 @@ initiate the POST test
 
 - 64bit RSI, 32 bit ESI, 16 bit SI, 8 bit SIL
 - `0x0E` Indicate Bios we gonna print chars,`0x10` Call Interrupt for printing chars
-- ``` General Purpose Registers```  used to store temporary data , 16 bit wide or 2 bytes long. AX,BX,CX,DX
-- ``` Segment Registers``` represent memory address to microprocessor.Segment is beginning of block of memory and offset index of memory block. Example: There is a byte whose value is 'X' that is present on a block of memory whose start address is 0x7c00 and the byte is located at the 10th position from the beginning so segment as 0x7c00 and the offset as 10. The absolute address is 0x7c00 + 10.
+- ```General Purpose Registers```  used to store temporary data , 16 bit wide or 2 bytes long. AX,BX,CX,DX
+- ```Segment Registers``` represent memory address to microprocessor.Segment is beginning of block of memory and offset index of memory block. Example: There is a byte whose value is 'X' that is present on a block of memory whose start address is 0x7c00 and the byte is located at the 10th position from the beginning so segment as 0x7c00 and the offset as 10. The absolute address is 0x7c00 + 10.
 - ```CS```-Code Segment eg:.text,```SS```-Stack Segment,```DS```-Data Segment eg:.data,.bss,```ES```-Extended Segment,(each have 16 bits),store base address that is starting address of corresponding segment.How 20 bit address obtained if there are only 16 bit registers? eg:DS=2222h BIU add 0H to LSB so base address will be 22220h(20 bit),EFFECTIVE ADDRESS=BASE ADDRESS+OFFSET. If using NASM stick with an explicit org 0x7c00 and then at the very least set DS to 0x0000. If you use org 0x0000 (same as nothing at all) you should be setting DS to 0x07C0. If you are reading disk sectors into memory you really should also set SS:SP to some place you know you won't be clobbering (Set SS to 0x0000 and SP to 0x7c00) places the stack below the bootloader which is a reasonable temporary place for many bootloaders. Any place you know won't interfere with your code will do
-- ``` Segment Registers``` But there is always a limitation with these registers. You cannot directly assign an address to these registers. What we can do is, copy the address to a general purpose registers and then copy the address from that register to the segment registers. Use of `POPA` instruction is given below.
+- ```Segment Registers``` But there is always a limitation with these registers. You cannot directly assign an address to these registers. What we can do is, copy the address to a general purpose registers and then copy the address from that register to the segment registers. Use of `POPA` instruction is given below.
 ![1694957906485](image/Readme/1694957906485.png)
 
 ## Example
@@ -110,7 +111,7 @@ DI(act as destination for string movement instructions).
 - `Real Mode` starts when x86 cpus booting from device. Supports only 16 bits instructions, so code written compiled only 16 bit compatible code.Virtual memory not enabled, if CR0 reg is 0 then program runs in real mode.
 - `Protected Mode` supports 32 bit instructions,modern OS runs  in protected mode,`CONS` <1MB of RAM availale for use,no GDT(hardware based memory protection) or Virtual Memory,no built in security mechansims to protect against malicious apps, default cpu operand length is 16bits, memory addressing modes are more restricted , accessing more than 64k requires use of segment register that are difficult to work with.`PROS` BIOS installs device drivers to control devices and handle interrupt also provide OS with advance collection of low level API functions and memory access is faster due to low descriptor tables, virtual mode enabled and accessible.
 - `Virtual 8086 mode` allow os to run in protected mode to emulate real mode for individual applications,allows Protected mode OS to have access like BIOS functions
-- ``` Instruction Set``` collection of entities like Instructions,registers,addressing modes,memory architecture,interrupt,exception handling,external I/O.8086,80286,80386,80486,Pentium,Pentium I,II,III are all x86 family.
+- ```Instruction Set``` collection of entities like Instructions,registers,addressing modes,memory architecture,interrupt,exception handling,external I/O.8086,80286,80386,80486,Pentium,Pentium I,II,III are all x86 family.
 
 # Interrupts
 
@@ -139,8 +140,10 @@ DI(act as destination for string movement instructions).
 ![Processor structure](image/Readme/1645290903416.png)
 
 ## Threading, Parallelism, Concurrency
+
 -Threads are important programming model because of requirement for concurrency in network servers,it is easier to share data between multiple threads than between multiple processes,because threads are typically more efficient than processes. Multi-threading is also one way to make
 programs run faster when multiple processors are available
+
 - `Pipelining` execute instructions partitioned into different steps where processor performs one of these steps.```SIMD(Single-Instruction Multiple-Data)``` allows single instruction to perform in parallel,compilers like GCC supported to extract SIMD parallelism from C programs this is called `Web Aside`.
 
 # Cache
@@ -148,10 +151,9 @@ programs run faster when multiple processors are available
 - L1 cache in processor holds tens of thousands of bytes,L2 cache holds thousands to millions of bytes connected to processor by a special bus,take 5 times longer for processor to access L2 than L1,5 to 10 times faster than to access MainMemory.L1,L2 are designed with hardware tech SRAM.In MemoryHierarchy storage at one level serves as cache for next lower level. Eg:Reg act as cache for L1,L1 act for L2,L3.
 - L3 is cache for mainMemory
 
-
 # Virtual Memory
 
-- First introduced by IBM in 1960.Virtual memory provides abstraction for main memory, I/O devices.Topmost region reserved for kernel. Top most of VirtualMemory contains stack(grows when program executes,decreases when function returns),heap 
+- First introduced by IBM in 1960.Virtual memory provides abstraction for main memory, I/O devices.Topmost region reserved for kernel. Top most of VirtualMemory contains stack(grows when program executes,decreases when function returns),heap
 - Machine with w-bit word size, virtual address space range from 0 to 2^w-1 giving program access to 2^w bytes.Eg: 32 bit word has virtual address space to 4GB(4x10^9 bytes),64 bit has 16 exabytes(1.84x10^19 bytes)
 
 ![virtualAddress](image/Readme/1644417972177.png)
@@ -164,6 +166,7 @@ programs run faster when multiple processors are available
 -```Triple faults``` indicates problem with os kernel or device drivers , mainly caused by buffer overflow or underflow which writes over the interrupt descriptor table (IDT).
 -```Real Mode``` default 16bits and 32 bit registers can also accessible by adding <Operand Size Override Prefix> 0x66 to beginning of any instruction.
 -```lea-Load effective address```  loads the address of the location reference by the source operand to the destination operand. For instance, you could use it to: lea ebx, `ebx+eax*8`. The ```%rip``` register on x86-64 is a special-purpose register that always holds the current memory address of the current instruction to execute in the program's code segment.%rip also shows up when an assembly program refers to a global variable,address reference is provided as a (signed) 32-bit displacement from the current instruction pointer.```ret or pop rip``` removes address to next line of code in stack
+
 - `0xb8000` is the vga color text is starting and locating at physical memory address in protected mode for color monitors and this buffer capable of holding 25 lines with each line of 80 ascii characters,characters in our video buffer are represented by two bytes aligned as a 16-bit word. lower byte is the actual character itself while the upper byte contains the format of the character such as its color, blinking, character set.`0xb0000` for monochrome monitors. `int 10h, int 13h,int 14h or int 16h`  to print strings reading sectors from floppy disk.mov ax,bx moves values from bx to ax and mov ax,```bx``` moves not only the contents but memory address to which bx points.For `>` use ja for unsigned and jg for  signed,For `<` jb for unsigned and jl for signed.For Unsigned JB/JNAE,JAE/JNB,JBE/JNA,JA/JNBE, For signed JL/JNGE,JGE/JNL,JLE/JNG,JG/JNLE
 - linker(ld) convert .o to .exe search for _start: , gcc as same as ld search for main: and `ld -m elf_i386 -o file file.o`  use elf_i386 because to allocate for comparing eax(64bit),rax(32bit).If we put data in %EAX , %AL change the lower 8 bit values.%ECX for increment/decrement operands.%EAX for arithmetic.%ESI and %EDI for copying data.%ESP stack pointers increase/decrease and performs like stack-pop,push and has upper index base index,%EBP base pointers points to base index of %ESP
 - `movzx eax,3` put last 2 bit 11(binary of 3) & remaining 0s in 32 bit reg.`movzx eax,byte ptr[ebx]` get one byte from address ebx and store to eax put 0s to remaining unused bits,```[ebx]```  use [] to store data inside that particular regs.`movsx eax,signedValues/unsignedValues` store signed values or unsigned values.
