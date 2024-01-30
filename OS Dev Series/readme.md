@@ -16,6 +16,7 @@
 <li>Read/write tell to disk controller by giving cylinder number,head number,sector number. This scheme called as Cyliner Head Sector Scheme which <span style="color:orange">BIOS only supports</span></li>
 <li>This scheme is useful to determine to physically locate data else not use. To locate data is in begin,middle or end in disk use Logical Block Addressing(LBA) Scheme.</li>
 <li>CHS Scheme - Cylinder and Head starts from index 0, Sector start from index 1.
+</ul>
 
 ![1694885204619](image/Readme/1694885204619.png)
 ![1694886037347](image/Readme/1694886037347.png)
