@@ -1,9 +1,116 @@
+# Appian 24.4 Release Features
+
+- Autoscaling - Increase no of process instances . `Autoscaled process activity` introduced in monitoring tab to monitor process at scale.Enable Autoscale in General tab of process model.
+- Document extraction AI Skill introduced for extracting table from document. Generate interface from PDF is now Private AI eliminate use of Azure openai license.
+- Add Adhoc events , Add dataset filter in ProcessHQ introduced. For Business users KPI introduced, AI COpilot suggest KPI for Process Hq and summarize the insights,recommendation on next steps.
+- Data fabric insights can add filters , add dataset filters , filter multiple text values using equal and not equal values , Different chart options with new icons introduced.
+- During configuring sync filters - filter by relationship and record fields has been added to filter from related recorded to sync only the value based on field we need. Enable `Keep data available high volumes` to connect to larger data source introduced. 
+- Enable `Recover smart service syncs` to fetch and resync smart service failure syncs. In Data model tab the source section now shows the table name including type and source name. Now duplicate security rule in record level security. Enhance rv!record field to check if field already been queried from different relationship and skip redundant fields.
+- In collaboration event history component the "subscribed" is introduced to receive notification . Generate new record type called subscriber when first configure record events or by creating record type later and update record events configs to access subscribe option.
+- Multi Lingual for portal using `a!portalUrlWithLocale()` has been introduced. `portal_usage.csv` log is now downloadable from system logs and monitor public sites usage across both internal and external audience  New `card group layout` introduced. `Heading` component is introduced. `Styled text editor` enhanced with more controls. Using `exportWhen` handle the grid data when to export to excel.
+- ASynchornous loading grid charts and KPIs using `loadDataAsync` parameter in gridfield to load slowest loading component in background. At before when querying record type we need to typecast to that record type table to use the values now by default when querying itself it automatically typecasted it.
+- `Data sync` in appian mobile menu enable offline users to sync all offline data from single location and also see date,time when their data is last refreshed.
+- Test case in expression rule has `Set as default testcase` so when open the rule it automatically loads it instead of going to test cases tab each time. 
+- In Admin Console > Infrastructure > Deployment settings for different individuals to request and review a deployment introduced . In Admin Console > Permissions > enable AI Copilot in Process Hq is introduced for enable/disable AI reports,suggestions, KPIs,summaries . In Admin console > file upload > Apply settings to contents of compressed files introduced to apply settings on compressed files too.
+- In Admin console > web api authentication > Mutual TLS introduced to use self signed , internal certificates for tls encrypted connections for dbs authentication. 
+
+
+# Appian 24.3 Release Features
+
+- Process HQ now has AI Copilot where we can ask questions on our data. Now in enterprise copilot we have `ALL KNOWLEDGE SET` option to discuss and ask Questions on all knowledge sets and the response that give in enterprise copilot now we can rate the response. All comments in enterprise copilot are visible only to relevant admins the site feedback and response feedback tab.
+- In RPA now has ability to manage versions of robotic tasks whenever modified or created. Boosed performance for process execution of Robotic tasks.
+- Process HQ data stewards now has filter option to filter the data that business users need using a Filter Data Button where it's available only when a data steards adds or edits process for both case and event data. For filter other than pre-defined we have "Add custom attribute" .
+- In Process HQ business users can create views for data and in this feature we have "Browse suggested views" option that use AI Copilot to suggest different views and finally show the resultant data like in img below
+
+![1724046216886](image/AppianReadMe/1724046216886.png)
+
+- For average activity duration requires the event record type used to setup the process has both a start and end timestamp field. It will be setup in event record type that will be used for process.The conformance rate in Process HQ where max percentage shows close conformance to planned process,low percentage indicate problem in completing the process that cost time or money.
+
+![1724046640620](image/AppianReadMe/1724046640620.png)
+
+- Data governors can now determine whether record is available in data catalog. In Process HQ now has `Scatter Chart` for relationship between two variable.
+- Case management studio has AI Copilot to handle suggestion of Field type when adding fields in the case using "Create Data Fields". Add multiple options,drag and drop to reorder fields in choice list for lookup and reference data . Now AI Copilot is implemented for Document Summary. Case Management Studio now has Public Self Registration Module for public users to acess their pre-existing case records and also self register for appian user account from public portal itself.
+- In Case management studio when customizing intake forms now have `a!studio_wizardLayout()` function to configure Save Draft button to allow users to save drafts and Display custom pages on wizard milestones before or after the steps configured in studio.
+- New tab `Data preview` introduced to write different values in record itself without going to db and click "Write changes" option to write changes to db and sync the record along with option to export the database script. 
+
+![1724047901324](image/AppianReadMe/1724047901324.png)
+
+- In interface have the "Event History List" component for conversation. Tracking the conversations is also possible using Reply thread record type where it's automatically generated when first configured record events. 
+- SOURCE FILTERS are now changed to SYNC FILTERS. Now drag and drop record level security rules. Now "Export to Excel" button is available in Performance tab to export performance related data.
+- `Pane layout billboard header and Pane layout card header` is newly introduced in the components.
+
+
+# Appian 24.2 Release Features
+
+- Appian 3D+ latest feature to implement the 3D models in website, to display 3D model `Cad web viewer public` component is used . View [Appian World showcase](https://www.youtube.com/watch?v=8BU11Bn6Z00) to know more about this.
+- AI Copilot to discuss about our data has been introduced with Data fabrics. New feature for `Process HQ` for Data fabric insights and Process insights has been introduced.
+- Added extra 11 new AI skills like text extraction, text summarization etc.
+`Generate sample data` feature using AI Copilot has been introduced for Record type to discuss about the record data 
+
+![1716793141074](image/AppianReadMe/1716793141074.png)
+
+- `AI Generated Test cases` is introduced for expression rules. `Enterprise copilot` is introduced with citations managed by admins who upload the files that can be used by AI to chat with.
+- New parameter `additionalInstructions` for Record chat component has been introduced for fine tuning the conversations.
+
+![1716793434204](image/AppianReadMe/1716793434204.png)
+
+- Add dropdowns, choice list data fields to forms, AI Smart suggestions chat module is integrated, Seamlessly working with Process HQ has been introduced for Case Management Studio
+- `Procuresight`, a data service for Procurement Federal Government professionals for searching past procurements and to create new procurements, searching sources such as USASpending.gov and SAM.gov and also has AI Copilot integration and for more signup to Procuresight website.
+- `Event History List component` is introduced in interface to collaborate with others on Record and comment on it and appian auotmatically stores in "comment" field. In `Records` userfriendly display names and description,Sync time custom record field that also used as common field for joining two record types, use created custom fields in charts, for sorting in user filter new field is introduced like below image, At before it's possible to create interface, PMs while creating Record action now also add `Editable grid` that added with Add record and delete record functionality, Delete record and add records smart services supports data model one to many record type relationship that use unique keys for delete and write related records.
+
+![1716795024384](image/AppianReadMe/1716795024384.png)
+
+-  Different icon is introduced for write records has data change that are incompatible with record types relationship configuration shown in image below. `Cancel full sync` is introduced to cancel full sync and if cancelled the last full sync will be used. For larger record types syncs are now `6X` faster.
+
+![1716795466915](image/AppianReadMe/1716795466915.png)
+
+- Last release `Query performance` tab is introduced and now in it `Monitor Record queries` is introduced for monitoring and `Query metrics` tab for monitoring record queries has been introduced shown in image below.
+
+![1716795959538](image/AppianReadMe/1716795959538.png)
+
+- `Calendar display, Range slider, carousel Slide finder` components added for portals. `Dynamic update url parameters` in url parameters and `Selected filters in filter section` are automatically saved are introduced. Preview Portal site layout in site itself like shown in first image below. When encountered error in Portals error message will be sent shown in second image.
+
+![1716796281441](image/AppianReadMe/1716796281441.png)
+![1716796359451](image/AppianReadMe/1716796359451.png)
+
+- `New styled text editor` for rich text editor is enhanced. New `set of KPI patterns` introduced for KPI component (released in 24.1). Implemented `Recommendation` for non supported functions for offline interfaces as shown in image.
+
+![1716796675335](image/AppianReadMe/1716796675335.png)
+
+- `Move translation set from one set to another` using Move button. Checking whether new created locale strings are already existed. Combining duplicate user display text into single translation string is introduced for translation strings.
+- `Connected System Management REST API` introduced to update Connected system properties programatically. Using Self Signed SSL for secure connections to LDAP in Trusted Server Certificates and `Idle session timeout` in admin console set to 10 mins are introduced.
+
+# Appian 24.1 Release Features
+
+- Case Management Studio - features case workspace,case records, workflow visualization,dynamic tasking including branching and loopback capabilities and document management.Email Notifications, Tracking,Reporting and auditing features for each application flows.
+- New `KPI Components` is introduced to show the different KPIs
+
+![1716796543969](image/AppianReadMe/1716796543969.png)
+
+- Upgraded the Self Service Analytics with Save,Edit and Sharing those reports across the organization.While sharing reports configure security with Everyone as "Viewer" access and if unshare change the security to "No access". For grids export to excel and for charts "download as PNG" , other formatting options like style , color has everything introduced for this too.
+- In Record types, `Workspaces` for Self service analytics is introduced to make record type available in Self-Service Analytics and Tempo.Users atleast need Viewer access to record type to see it as dataset.
+- New AI Skill `Prompt Builder` along with `Execute Prompt Builder Smart Service` has been introduced. In Document extraction AI Skill, now train the new model using a model that already previously trained where new model is pre-populated with same fields, training data and labels that are used in previous model.
+- In RPA, new `Execute Robotic Task` smart service is introduced so we don't want any connected system or integration to trigger the RPA. Updated the Operations Console of RPA where it shows Memory Used, Disk space Used etc.New `Robots Pool Tab` to see grouped RPA pools. The action in RPA `Get Table Values` to extract the table data from HTML is now part of task recorder. In RPA , Robots by default leverage robot keys for authenticating agents, Set it up in Settings > Configuration > Security Policies.
+- If there is pv with any Record type, now Process History has new column `Properties` with new icons to identify data chaged by write records smart service.
+- `Write Records` now preserves input data, plus created identifiers and event records,Ignores related records changes for "do not write or delete" relationships,Ignores references to cross-source data,Allow source data fields to be not-nullable and automatically creates join to referenced record in different database,Write to different sources without returning errors For example: When write data to database and web service , Write record write change to db but ignore web service.
+- When related record set to not allow write, `Write Records` still make changes to base record and ignore related record changes. In record types `Sync Options` page,new option "Keep data available at high volumes" will be used to sync latest 4 million prevent records from exceeding synced row limit. 
+- `Query Performance` tab has been added to performance page.`FEDRAMP` compliant portals available for many customers.Use plugins like google maps,ARCGIS map,rich text editor in Appian portals. Sidebar Layout is now available for portals.
+- Add service account to group in portal itself. New parameter `targetLocation` introduced in function a!recordLink(),a!userRecordLink() to open record link in specific site page. `a!queryRecordByIdentifier()` now supports to query both synced and non-synced records.`Troubleshooting warning message` implemented in portals so that if non supported functions or plugins found it will inform in interface.
+- View error logs in portal monitoring tabs itself clearly. Translation variables to show language value dynamically  without static in traslation settings bundle is implemented.
+
+![1709882019279](image/AppianReadMe/1709882019279.png)
+
+- Now find and manage duplicate translation strings in Translation Bundle, Import translation strings asynchronously, Compare string versions across environments,Faster sorting and performance,Increase max number of string per set to 5000.
+- `Pane layout, New KPI Component` in interface been introduced. In Horizontal row component, now format the line with Dotted,Dash styles.
+- MFA in Email page is available to verify using OTP in email.To enable it goto Admin > Authentication > Appian > Enable MFA checkbox and add group that need to do MFA. The mentioned group shouldn't be present in other authentication methods.
+- Calling Web APIs using access token issued by third-party OAuth Providers been introduced to connected system OAuth 2.0 client credentials grant.New tab "Third party Oath 2.0 Clients" under Admin > Web API Authentication is implemented.
+
 # Appian 23.4 Release Features
 
 - Introduced Robot keys in Appian RPA to identify robot and fully managed by customers.
 - Open and work with multiple workbooks simultaneously, Copy data between sheets and workbook, Add sorting and filtering, Search worksheet by cell value, Choose workbooks to close, Refresh data connections and pivot table can be done now in Appian RPA for excel. `Excel: License Required` with new actions introduced.
 - New interface component `RecordChats` introduced with AI CoPilot features to chat based on Records and related records.
-- `Data Fabric Analytics`, new workspace to create views quickly. It has data contaned in multiple apps. Every dataset is made of record type and its one-to-one, many-to-one related record types. Every users should be in `Data Fabric Report Creators` group.
+- `Data Fabric Analytics or Self Service Analytics`, new workspace to create views quickly. It has data contaned in multiple apps. Every dataset is made of record type and its one-to-one, many-to-one related record types. Every users should be in `Data Fabric Report Creators` group.
 - Delete records and its related records using `Delete records` smart service by allowing `allow modifying related records`. Configure record actions automatically and rv!reocrd now automatically queries fields referenced in start form.
 - `Auto-commit` field in Execute stored procedure smart service introduced. Rename integrations from object properties menu. Now upload logo files to Custom JDBC Connected systems where logo displayed in record type relationship diagrams and everywhere.
 - `Translation set` new object introduced to create language translations across an application. `Page groups` navigations are introduced in sites available for both web and mobile apps. `Portal monitoring` tab introduced in Monitoring section for indicating latency, traffic and error rate of portals. 

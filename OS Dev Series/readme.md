@@ -187,7 +187,9 @@ programs run faster when multiple processors are available
 - Different processors use different architecture, we can't make system calls if different
 - replacing int main(void *) {with void main(void*),this approach is best practice.Using void main(void *) { instead of int main(void*) { doesn’t work with some compilers. ```sh gcc -c kernel.c -o kernel -ffreestanding -m32``` for compiling to object code, here c=tells compiler kernel.c will be compiling, -ffreestanding= tells compiler that standard c library may not exist and entry point may not necessarily by located at main,-m32=tells compiler that it should compile code for 32 architecture.
 - How inline function in c is more efficient [here](https://stackoverflow.com/questions/144993/how-much-overhead-is-there-in-calling-a-function-in-c)
+
 ![C's History](image/Readme/1646489887620.png)
+
 - Most Intel-compatible machines operate exclusively in little-endian . On the other hand, most machines from IBM and Oracle(arising from acquistion of Sun Microsystems in 2010) uses Big-endian.Android(from Google) and IOS (from Apple)—operate in ARM processors works in little-endian mode
 ![BigAndLittleEndian](image/Readme/1650555639054.png)
 - Unicode consortium is maintaining 100000 chars.Unicode that use 32 bit have 4 bytes/char,others have 1 or 2 bytes

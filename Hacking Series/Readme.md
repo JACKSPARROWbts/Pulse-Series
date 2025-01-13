@@ -1,33 +1,33 @@
 # Common Information
 
--Follow LulzSec,Anonymous for more information
--Node Zero linux for testing just like kali linux
--Getting passwords from trash or dustbins called as "dumpster jumping"
+- Follow LulzSec,Anonymous for more information
+- Node Zero linux for testing just like kali linux
+- Getting passwords from trash or dustbins called as "dumpster jumping"
 
 # Essential Hacking tools and skills
 
 ``Tools``
--SQLI Helper use to hack powerless sites with sql infusion.
--Dark Port Scanner examines for open ports on a network.
--Sonic Bat the batch file virus creator
--Local Info inspects neighborhood host and shows data about processor,memory
--Name Scanner gives all hostnames inside of scope of IP locations
--Port Scanner examines networks for dynamic TCP based administrations
--Ping Scanner pings a remote has over the system.
--Cain and Abel helps sniffing,breaking password hashes, rainbow tables are created with the winrtgen.exe,cryptanalysis assaults,recording VOIP discussions
--Superscan(port scanner) like TCP/IP port scanner
--Passive assault gathering(only for social event some essential data)tools are NAP,Nesses,Eraser,LCP(windows password cracker)
--Nekton CGI scanner incorporates 3200 perilous documents/CGIs
--Pouf identify working framework on SYN Mode,SYN+ACK mode,RST+mode,machine interchanges you can watch
--Samurai Web testing framework for pentesting the webpages
--Kopi STD gathering of hundreds and open source security instruments.
--Canine(Computer aided investigative environment) for giving a cordial GUI
--UACMe to bypass windows UAC by abusing built-in windows autoelevate backdoor.[here](https://github.com/hfiref0x/UACME)
+- SQLI Helper use to hack powerless sites with sql infusion.
+- Dark Port Scanner examines for open ports on a network.
+- Sonic Bat the batch file virus creator
+- Local Info inspects neighborhood host and shows data about processor,memory
+- Name Scanner gives all hostnames inside of scope of IP locations
+- Port Scanner examines networks for dynamic TCP based administrations
+- Ping Scanner pings a remote has over the system.
+- Cain and Abel helps sniffing,breaking password hashes, rainbow tables are created with the winrtgen.exe,cryptanalysis assaults,recording VOIP discussions
+- Superscan(port scanner) like TCP/IP port scanner
+- Passive assault gathering(only for social event some essential data)tools are NAP,Nesses,Eraser,LCP(windows password cracker)
+- Nekton CGI scanner incorporates 3200 perilous documents/CGIs
+- Pouf identify working framework on SYN Mode,SYN+ACK mode,RST+mode,machine interchanges you can watch
+- Samurai Web testing framework for pentesting the webpages
+- Kopi STD gathering of hundreds and open source security instruments.
+- Canine(Computer aided investigative environment) for giving a cordial GUI
+- UACMe to bypass windows UAC by abusing built-in windows autoelevate backdoor.[here](https://github.com/hfiref0x/UACME)
 - Snort to detect intrusions,for packet sniffing,packet logging,network intrusion detection
 ![Intrusion detection system](image/Readme/1653231616073.png)
 - Mimikatz allows to pull out memory from windows systems and parse out password from memory.
 - linPEAS, an enumeration tool, Linux Privilege Escalation script to find every information about the linux machine like network,directories,files etc
-- Autopsy an Forensic browser list every useful informations regarding .img files. BinWalk also walks through .img files and gives us useful datas.
+- Autopsy, an Forensic browser list every useful informations regarding .img files. BinWalk also walks through .img files and gives us useful datas.
 - RedLine Stealer,a malware for sae that harvest info from browsers saved credentials,autocomplete data,credit card information,also steal cryptocurrency,execute comands,send back info about infected computer  
 - Yeti,Whois is used for passive information gathering.
 - Netcraft a web-based tool that use to find IP address of a server hosting a particular website.
@@ -36,6 +36,10 @@
 - Bettercap, MITMf for performing Man in the Middle Attacks. Refer [Mitmf github](https://github.com/byt3bl33d3r/MITMf) and [ARP Spoofing](https://linuxhint.com/arp_spoofing_using_man_in_the_middle_attack/) using linux. 
 - Pwnagotchi to crack wifi with AI,we can use it in raspberry,linux
 - Flipper Zero,a hardware device surely need to buy and try it for hacking
+- Censys, the website for searching malwares trozans everything. Refer [here](https://github.com/thehappydinoa/awesome-censys-queries), [youtube](https://www.youtube.com/watch?v=QPjeTSFhfP4)
+- [PyBluez](https://github.com/pybluez/pybluez),  module allows Python code to access the host machine's Bluetooth resources.
+- [BlueDucky](https://github.com/pentestfunctions/BlueDucky), tool for exploiting a vulnerability in Bluetooth devices,Load saved Bluetooth devices that are no longer visible but have Bluetooth still enabled and Automatically save any devices that scan and Send messages via ducky script format to interact with devices.
+
 
 ``Skills``
 -Understandings of DHCP,NAT,subletting,IPV4,IPV6,Public vs Private IP,DNS,Routers and Switches,VLANs,OSI model,MAC,ARP,PKI (open key infrstructure),SSL(secure attachments layer),IDS(Interrupiton discovery framework),firewalls,How to redirect traffic to fake website,TCP/IP,Cryptography,
@@ -82,6 +86,7 @@ Hunting for Microsoft's SQL server,Cracking SQL server passwords and owning the 
 - ```MS08-067``` could allow remote code execution if an affected system received a specially crafted RPC request. On Microsoft Windows 2000, Windows XP, and Windows Server 2003 systems, an attacker could exploit this vulnerability without authentication to run arbitrary code.
 - ```RealVNC(4.1.0,4.1.1)``` have [Bypass vulnerability](https://www.rapid7.com/db/modules/auxiliary/admin/vnc/realvnc_41_bypass/),refer [here](https://www.exploit-db.com/exploits/36932). ```CVE-2008-4770```
 - Vulnerability in ```LibreNMS (v1.46,v1.50)``` can be [exploited](https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/exploit/linux/http/librenms_collectd_cmd_inject.md)
+- Vulnerability in Firefox,Tor and many other browsers `CVE-2024-9680` affecting Firefox versions prior to 131.0.2 allows RCE in browsers [Refer](https://youtu.be/2RmUMmUj3u8)
 
 
 # Android and iPhone exploitation
@@ -93,6 +98,8 @@ Hunting for Microsoft's SQL server,Cracking SQL server passwords and owning the 
 ## Android
 
 - Vulnerability in ```Android 5``` stagefright ,find [here](https://thehackernews.com/2015/09/stagefright-android-exploit-code.html) and [here](https://github.com/eudemonics/scaredycat/blob/master/scaredycat.py).
+- Vulnerability in Bluetooth device , ```CVE-2023-45866``` to exploit bluetooth through online , [Refer](https://www.youtube.com/watch?v=IevVEUzXA30&t=1169s) 
+
 
 # Others
 
